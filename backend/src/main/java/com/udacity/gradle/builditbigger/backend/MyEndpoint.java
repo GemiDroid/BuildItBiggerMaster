@@ -6,6 +6,7 @@
 
 package com.udacity.gradle.builditbigger.backend;
 
+import com.gemidroid.java_lib.JavaClass;
 import com.google.api.server.spi.config.Api;
 import com.google.api.server.spi.config.ApiMethod;
 import com.google.api.server.spi.config.ApiNamespace;
@@ -28,6 +29,10 @@ public class MyEndpoint {
     public MyBean sayHi(@Named("name") String name) {
         MyBean response = new MyBean();
         response.setData("Hi, " + name);
+
+        JavaClass javaClass=new JavaClass();
+
+        response.setData(javaClass.GetAllJokes().get(0));
 
         return response;
     }

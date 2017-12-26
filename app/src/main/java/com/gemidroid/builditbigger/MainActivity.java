@@ -7,6 +7,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -43,6 +45,9 @@ public class MainActivity extends AppCompatActivity {
     public void tellJoke(View view) {
         Toast.makeText(this, "Hello", Toast.LENGTH_SHORT).show();
 
+       /* MyEndpoint myEndpoint=new MyEndpoint();
+
+        myEndpoint.sayHi("hi");*/
 
     }
 
