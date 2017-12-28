@@ -6,20 +6,17 @@ import android.os.AsyncTask;
 import android.util.Log;
 import android.util.Pair;
 import android.view.View;
-
 import com.gemidroid.android_lib.AndroidLibrary;
 import com.gemidroid.java_lib.JavaClass;
 import com.google.api.client.extensions.android.http.AndroidHttp;
 import com.google.api.client.extensions.android.json.AndroidJsonFactory;
 import com.google.api.client.googleapis.services.AbstractGoogleClientRequest;
 import com.google.api.client.googleapis.services.GoogleClientRequestInitializer;
-
 import com.udacity.gradle.builditbigger.backend.myApi.MyApi;
-
 import java.io.IOException;
 
-import static com.udacity.gradle.builditbigger.MainActivityFragment.progress_bar;
-import static com.udacity.gradle.builditbigger.MainActivityFragment.text_after_async;
+import static com.udacity.gradle.builditbigger.MainActivityFragment.prog_bar;
+import static com.udacity.gradle.builditbigger.MainActivityFragment.txt_async;
 
 
 /**
@@ -74,8 +71,8 @@ public class EndpointsAsyncTask extends AsyncTask<Pair<Context, String>, Void, S
 //        double x1 = Math.random();
         int x = (int) (Math.random() * 9);
         String s = javaJokesList.GetAllJokes().get(x);
-        progress_bar.setVisibility(View.GONE);
-        text_after_async.setVisibility(View.VISIBLE);
+        prog_bar.setVisibility(View.GONE);
+        txt_async.setVisibility(View.VISIBLE);
         try {
             Thread.sleep(5000);
         } catch (InterruptedException e) {

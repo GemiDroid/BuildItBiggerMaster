@@ -17,10 +17,10 @@ import com.udacity.gradle.builditbigger.R;
  * A placeholder fragment containing a simple view.
  */
 public class MainActivityFragment extends Fragment {
-    public static ProgressBar progress_bar;
+    public static ProgressBar prog_bar;
 
-    public static TextView text_after_async;
-    Button tell_jo_btn;
+    public static TextView txt_async;
+    Button tell_btn;
 
     public MainActivityFragment() {
     }
@@ -30,11 +30,11 @@ public class MainActivityFragment extends Fragment {
                              Bundle savedInstanceState) {
 //        if()
         View root = inflater.inflate(R.layout.fragment_main, container, false);
-        text_after_async = (TextView) root.findViewById(R.id.text_after_async);
+        txt_async = root.findViewById(R.id.txt_async);
 
-        progress_bar = (ProgressBar) root.findViewById(R.id.progress_bar);
-        tell_jo_btn = (Button) root.findViewById(R.id.tell_jo_btn);
-        tell_jo_btn.setOnClickListener(new View.OnClickListener() {
+        prog_bar =  root.findViewById(R.id.prog_bar);
+        tell_btn =  root.findViewById(R.id.tell_btn);
+        tell_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 tellJoke();
@@ -47,14 +47,13 @@ public class MainActivityFragment extends Fragment {
     @Override
     public void onStart() {
         super.onStart();
-        text_after_async.setVisibility(View.GONE);
+        txt_async.setVisibility(View.GONE);
     }
 
     public void tellJoke() {
 
-        progress_bar.setVisibility(View.VISIBLE);
+        prog_bar.setVisibility(View.VISIBLE);
         new EndpointsAsyncTask().execute(new Pair<Context, String>(getActivity(), "Manfred"));
-//        Toast.makeText(this, "derp", Toast.LENGTH_SHORT).show();
     }
 
 
