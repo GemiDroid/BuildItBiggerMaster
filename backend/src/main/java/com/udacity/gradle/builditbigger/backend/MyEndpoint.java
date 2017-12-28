@@ -22,6 +22,9 @@ import javax.inject.Named;
                 packagePath = ""
         )
 )
+
+
+
 public class MyEndpoint {
 
     /** A simple endpoint method that takes a name and says Hi back */
@@ -34,6 +37,14 @@ public class MyEndpoint {
 
         response.setData(javaClass.GetAllJokes().get(0));
 
+        return response;
+    }
+
+    @ApiMethod(name = "getJokes")
+    public MyBean getJoke() {
+        MyBean response = new MyBean();
+        JavaClass javaJokesList =new JavaClass();
+        response.setData(javaJokesList.GetAllJokes().get((int)(Math.random()*9)));
         return response;
     }
 

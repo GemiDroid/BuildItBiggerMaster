@@ -7,7 +7,8 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.gemidroid.builditbigger.MainActivityFragment">
+    tools:context=".MainActivityFragment"
+>
 
     <TextView
         android:id="@+id/instructions_text_view"
@@ -16,13 +17,28 @@
         android:text="@string/instructions" />
 
     <Button
+        android:id="@+id/tell_jo_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/instructions_text_view"
-        android:onClick="tellJoke"
         android:text="@string/button_text"
 
         />
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/text_after_async"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/async_is_done"
+        android:layout_centerInParent="true"
+        android:visibility="gone" />
 
     <com.google.android.gms.ads.AdView
         android:id="@+id/adView"
@@ -31,6 +47,7 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         ads:adSize="BANNER"
-        ads:adUnitId="@string/banner_ad_unit_id"></com.google.android.gms.ads.AdView>
+        ads:adUnitId="@string/banner_ad_unit_id" />
+
 
 </RelativeLayout>

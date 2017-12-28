@@ -1,13 +1,12 @@
 apply plugin: 'com.android.application'
-
+apply plugin: 'com.google.cloud.tools.endpoints-framework-client'
 android {
-    compileSdkVersion 25
-    buildToolsVersion "25.0.2"
-
+    compileSdkVersion 26
+    buildToolsVersion "26.0.1"
     defaultConfig {
         applicationId "com.gemidroid.builditbigger"
         minSdkVersion 16
-        targetSdkVersion 25
+        targetSdkVersion 26
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -18,6 +17,37 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    aaptOptions {
+        noCompress 'png'
+    }
+
+ /*   flavorDimensions "default"*/
+
+    configurations.all {
+        resolutionStrategy {
+            force 'com.android.support:support-annotations:24.2.1'
+        }
+    }
+
+    productFlavors {
+        paid {
+            minSdkVersion 16
+            applicationId 'com.gemidroid.builditbigger.paid'
+            targetSdkVersion 26
+            versionCode 1
+            versionName '1.0'
+            multiDexEnabled true
+        }
+        free {
+            minSdkVersion 16
+            applicationId 'com.gemidroid.builditbigger.free'
+            targetSdkVersion 26
+            versionCode 1
+            versionName '1.0'
+            multiDexEnabled true
+        }
+    }
 }
 
 dependencies {
@@ -25,7 +55,15 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile 'com.android.support:appcompat-v7:25.0.0'
-    compile 'com.google.android.gms:play-services-ads:9.8.0'
+    compile 'com.android.support:appcompat-v7:26.1.0'
+    //-----------------------------------------------------------------------//
     compile project(':java_lib')
+    compile project(':android_lib')
+    //---------------------------------------------------------------------------//
+    paidCompile 'com.google.android.gms:play-services:9.8.0'
+    freeCompile 'com.google.android.gms:play-services-ads:9.8.0'
+    //----------------------------------------------------------------------//
+    endpointsServer project(path: ':backend', configuration: 'endpoints')
+    compile 'com.google.api-client:google-api-client:+'
+    compile 'com.google.http-client:google-http-client-android:1.23.0'
 }

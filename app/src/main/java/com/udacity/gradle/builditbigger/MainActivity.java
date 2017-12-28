@@ -1,11 +1,10 @@
-package com.gemidroid.builditbigger;
+package com.udacity.gradle.builditbigger;
+
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Toast;
 
 
 
@@ -16,7 +15,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
+//       / FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+//        fragmentTransaction.replace(R.id.)
     }
 
 
@@ -42,14 +42,6 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void tellJoke(View view) {
-        Toast.makeText(this, "Hello", Toast.LENGTH_SHORT).show();
-
-       /* MyEndpoint myEndpoint=new MyEndpoint();
-
-        myEndpoint.sayHi("hi");*/
-
-    }
 
 
 }
