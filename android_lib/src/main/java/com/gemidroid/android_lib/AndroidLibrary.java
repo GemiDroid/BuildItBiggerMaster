@@ -8,7 +8,8 @@ import android.widget.TextView;
  * Created by User1 on 28/12/2017.
  */
 
-public class AndroidLibrary extends AppCompatActivity {
+public class
+AndroidLibrary extends AppCompatActivity {
 
 
     TextView txt_library;

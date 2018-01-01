@@ -66,7 +66,7 @@ public class EndpointsAsyncTask extends AsyncTask<Pair<Context, String>, Void, S
 //        Toast.makeText(context, result, Toast.LENGTH_LONG).show();
 
 
-        JavaClass javaJokesList = new JavaClass();
+      /*  JavaClass javaJokesList = new JavaClass();
 //        javaJokesList.prepareJokes();
 //        double x1 = Math.random();
         int x = (int) (Math.random() * 9);
@@ -77,10 +77,10 @@ public class EndpointsAsyncTask extends AsyncTask<Pair<Context, String>, Void, S
             Thread.sleep(5000);
         } catch (InterruptedException e) {
             e.printStackTrace();
-        }
+        }*/
 
         Intent intent = new Intent(context, AndroidLibrary.class)
-                .putExtra("jokes", s);
+                .putExtra("jokes", result);
 
         context.startActivity(intent);
     }

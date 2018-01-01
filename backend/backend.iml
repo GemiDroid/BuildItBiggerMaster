@@ -16,9 +16,9 @@
       <configuration>
         <option name="HTTP_ADDRESS" value="localhost" />
         <option name="HTTP_PORT" value="8080" />
-        <option name="WAR_DIR" value="E:\Smartech Android\Build-It-Bigger\backend\build\exploded-app" />
-        <option name="WEB_APP_DIR" value="E:\Smartech Android\Build-It-Bigger\backend\src\main\webapp" />
-        <option name="APPENGINE_SDKROOT" value="C:\Users\User1\.gradle\appengine-sdk\appengine-java-sdk-1.9.38" />
+        <option name="WAR_DIR" value="C:\Users\pc\StudioProjects\Movie_Nano_App_Final\BuildItBiggerFinal\BuildItBiggerMaster\backend\build\exploded-app" />
+        <option name="WEB_APP_DIR" value="C:\Users\pc\StudioProjects\Movie_Nano_App_Final\BuildItBiggerFinal\BuildItBiggerMaster\backend\src\main\webapp" />
+        <option name="APPENGINE_SDKROOT" value="C:\Users\pc\.gradle\appengine-sdk\appengine-java-sdk-1.9.38" />
       </configuration>
     </facet>
   </component>
